@@ -1,5 +1,6 @@
 # WELCOME TO FLATACUTIES
 **The Home of Cute Animals**
+
 This repository focuses on Flatacuties, an app where you can vote for the cutest animal! I used a local API to build out the frontend for the app.
 
 **Setup Requirements**
@@ -17,9 +18,11 @@ This repository focuses on Flatacuties, an app where you can vote for the cutest
 
 
 **Author**
+
 Frida Nduta Gathima
 
 **Licence**
+
 Copyright (c) 2022 Frida Nduta Gathima.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files , to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
