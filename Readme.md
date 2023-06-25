@@ -2,17 +2,23 @@
 **The Home of Cute Animals**
 
 This repository focuses on Flatacuties, an app where you can vote for the cutest animal! I used a local API to build out the frontend for the app.
+The list of the cute animals that are competing is displayed in the homepage.
+When a user clicks on an animal’s name, they're able to see its details that is the image and number of votes their favorite animal has garned. This makes the competition fair to all the animals.
+
 
 **Setup Requirements**
+
 1. Git
 2. Github
 
 **Technologies Used**
+
 1. HTML
 2. CSS
 3. JavaScript
 
 **Screenshot of the Homepage**
+
 
 ![Alt text](<Screenshot from 2023-06-25 21-07-27.png>)
 
