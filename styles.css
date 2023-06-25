@@ -1,0 +1,16 @@
+body {
+    background-image: url('leaves4.webp');
+}
+.heading {
+    font-size: 40px;
+    font-weight: bolder;
+}
+.paragraphs {
+    font-size: 25px;
+}
+#animals {
+    font-size: 20px;
+}
+#animals h2 {
+    font-size: 40px;
+}
