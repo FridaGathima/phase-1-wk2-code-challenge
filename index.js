@@ -1,37 +1,57 @@
-let getAnimals = fetch("http://localhost:3000/characters") // I used fetch() to get the data from the JSON server to javascript
-    .then ((response) => response.json()) 
-    .then ((data) => {
-        let ul = document.querySelector("ul")  // The names of the animals will be under ul 
-        data.forEach((characters) => {              //I looped through the data and out of it picked each character 
-            const li = document.createElement("li") // This is to create li for every character instead of doing it in HTML
-        li.textContent = characters.name  // These are the names of the animals that will be displayed in the webpage
-        ul.appendChild(li)
+
+const animals = document.getElementById('animallist')
+const animaldetail = document.getElementById('animaltypes')
+
+fetch ("http://localhost:3000/characters")
+.then (response => response.json())
+.then (data => {
+       data.forEach (animal => {
+          console.log(animal)
+
+        const animalItem = document.createElement("li")
+        animalItem.innerText = animal.name
+        animals.appendChild(animalItem)
+
+       itemWhenClicked(animalItem, animal)
+        displayAnimalDetail(animal)
+ })
+ })
+
+function itemWhenClicked (animalItem, animal){
+      animalItem.addEventListener ('click', ()=> {
+     displayAnimalDetail (animal)
     })
-})
-
-
-let getId = fetch("http://localhost:3000/characters") // I used fetch() to get the data from the JSON server to javascript
-    .then ((response) => response.json()) 
-    .then ((data) => {
-        let ul = document.querySelector("ul")  // The ids of the animals will be under ul 
-        data.forEach((characters) => {              //I looped through the data and out of it picked each character 
-            const li = document.createElement("li") // This is to create li for every character instead of doing it in HTML
-        li.textContent = characters.id // These are the ids of the animals that will be displayed in the webpage
-        ul.appendChild(li)
-    })
-})
-
-function description (){
-    let more = document.createElement('div')
-    more.className = 'moreDescription'
-    more.innerText = 'testing'
-    animals.appendChild(more)
 }
 
+function displayAnimalDetail (animal){
+    animaldetail.innerHTML = ''
 
-// On clicking
-const ul = document.querySelector("ul")
-ul.addEventListener("click", (e) =>{
-console.log ("click")
-})
+    const myimg = document.createElement('img')
+    myimg.src = animal.image
+    animaldetail.appendChild(myimg)
 
+    const name = document.createElement ('p')
+    name.innerText = animal.name
+    animaldetail.appendChild(name)
+
+    const votes = document.createElement ('p')
+    votes.id = 'displayvotes'
+    votes.innerText = animal.votes
+    animaldetail.appendChild(votes)
+
+    const votebutton = document.createElement('button')
+    votebutton.id = 'votes'
+    votebutton.innerText = 'VOTES'
+    animaldetail.appendChild(votebutton)
+
+    const resetbutton = document.createElement('button')
+    resetbutton.id = 'resetbuttton'
+    resetbutton.innerText = 'RESETVOTES'
+    animaldetail.appendChild(resetbutton)
+
+    const voting = document.getElementById('votes')
+    voting.addEventListener('click', () => {
+       const displayvotes = document.getElementById('displayvotes')
+        displayvotes.innerText = (animal.votes)++
+    })
+}
